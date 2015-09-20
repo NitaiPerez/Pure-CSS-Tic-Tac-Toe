@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+/* Setup body to center game  */
+body {
+    color: #FFAA16;
+    background-color: #1F041B;
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* Design for game title: */
+h1 {
+    font-size: 40px;
+    margin-top: 55px;
+}
+
+/* Initialize game area with board */
+.game {
+    font-family: sans-serif;
+    height: 460px;
+    margin: 50px auto 50px auto;
+    overflow: hidden;
+    position: relative;
+    width: 460px;
+    background-color: #FFAA16;
+}
+
+/* Set up invisible game-end screen (note display:none) */
+.game .end {
+    background: rgba(255, 255, 255, 0.56);
+    bottom: 5px;
+    color: #3d4250;
+    display: none;
+    left: 5px;
+    padding-top: 110px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 5px;
+    z-index: 11;
+}
+
+/* Design restart link to seem like a button using background and border-radius */
+.game .end a {
+    background-color: #0C0F17;
+    border-radius: 50px;
+    color: #fff;
+    padding: 14px 45px;
+    text-decoration: none;
+}
+
+/* Design for game-end text: */
+.game .end h3 {
+    color: #0C0F17;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+/* Show text for purple win: */
+.game .team-1.left:checked ~ .team-1.left:checked ~ .team-1.left:checked ~ .end h3:before,
+.game .team-1.middle:checked ~ .team-1.middle:checked ~ .team-1.middle:checked ~ .end h3:before,
+.game .team-1.right:checked ~ .team-1.right:checked ~ .team-1.right:checked ~ .end h3:before,
+.game .team-1.top:checked ~ .team-1.top:checked ~ .team-1.top:checked ~ .end h3:before,
+.game .team-1.center:checked ~ .team-1.center:checked ~ .team-1.center:checked ~ .end h3:before,
+.game .team-1.bottom:checked ~ .team-1.bottom:checked ~ .team-1.bottom:checked ~ .end h3:before,
+.game .team-1.first-diagonal:checked ~ .team-1.first-diagonal:checked ~ .team-1.first-diagonal:checked ~ .end h3:before,
+.game .team-1.second-diagonal:checked ~ .team-1.second-diagonal:checked ~ .team-1.second-diagonal:checked ~ .end h3:before {
+    content: "Purple" !important;
+}
+
+/* Show text for orange win: */
+.game .team-2.left:checked ~ .team-2.left:checked ~ .team-2.left:checked ~ .end h3:before,
+.game .team-2.middle:checked ~ .team-2.middle:checked ~ .team-2.middle:checked ~ .end h3:before,
+.game .team-2.right:checked ~ .team-2.right:checked ~ .team-2.right:checked ~ .end h3:before,
+.game .team-2.top:checked ~ .team-2.top:checked ~ .team-2.top:checked ~ .end h3:before,
+.game .team-2.center:checked ~ .team-2.center:checked ~ .team-2.center:checked ~ .end h3:before,
+.game .team-2.bottom:checked ~ .team-2.bottom:checked ~ .team-2.bottom:checked ~ .end h3:before,
+.game .team-2.first-diagonal:checked ~ .team-2.first-diagonal:checked ~ .team-2.first-diagonal:checked ~ .end h3:before,
+.game .team-2.second-diagonal:checked ~ .team-2.second-diagonal:checked ~ .team-2.second-diagonal:checked ~ .end h3:before {
+    content: "Orange" !important;
+}
+
+/* Show text for tie when all checkboxes checked: */
+.game input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .end > h3:before {
+    content: "Tie! No";
+}
+
+/* Hide actual radio buttons from being shown: */
+.game input {
+    display: none;
+}
+
+/* Set up game square positions by shifting from top and left: */
+.game input.top + label {
+    top: 0;
+}
+
+.game input.bottom + label {
+    top: 300px;
+}
+
+.game input.center + label {
+    top: 150px;
+}
+
+.game input.left + label {
+    left: 0;
+}
+
+.game input.middle + label {
+    left: 150px;
+}
+
+.game input.right + label {
+    left: 300px;
+}
+
+/* Set shape by team class for all labels: */
+.game input.team-1 + label:after {
+    content: "×";
+}
+
+.game input.team-2 + label:after {
+    content: "○";
+}
+
+/* Setup team colors for checked squares: */
+.game input.team-1:checked + label {
+    background-color: #A608D1;
+}
+
+.game input.team-2:checked + label {
+    background-color: #FC5C05;
+}
+
+/* On every turn, show the next turn squares: */
+.game input.turn-1:checked ~ .turn-2 + label,
+.game input.turn-2:checked ~ .turn-3 + label,
+.game input.turn-3:checked ~ .turn-4 + label,
+.game input.turn-4:checked ~ .turn-5 + label,
+.game input.turn-5:checked ~ .turn-6 + label,
+.game input.turn-6:checked ~ .turn-7 + label,
+.game input.turn-7:checked ~ .turn-8 + label,
+.game input.turn-8:checked ~ .turn-9 + label,
+    /* Once all 9 blocks are clicked, end game: */
+.game input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ .end,
+    /* Handle team 1 victory:  */
+    /* Left column */
+.game .team-1.left:checked ~ .team-1.left:checked ~ .team-1.left:checked ~ .end,
+    /* Middle column */
+.game .team-1.middle:checked ~ .team-1.middle:checked ~ .team-1.middle:checked ~ .end,
+    /* Right column */
+.game .team-1.right:checked ~ .team-1.right:checked ~ .team-1.right:checked ~ .end,
+    /* Top row */
+.game .team-1.top:checked ~ .team-1.top:checked ~ .team-1.top:checked ~ .end,
+    /* Center row */
+.game .team-1.center:checked ~ .team-1.center:checked ~ .team-1.center:checked ~ .end,
+    /* Bottom row */
+.game .team-1.bottom:checked ~ .team-1.bottom:checked ~ .team-1.bottom:checked ~ .end,
+    /* Top Left to Bottom right */
+.game .team-1.first-diagonal:checked ~ .team-1.first-diagonal:checked ~ .team-1.first-diagonal:checked ~ .end,
+    /* Top Right to Bottom Left */
+.game .team-1.second-diagonal:checked ~ .team-1.second-diagonal:checked ~ .team-1.second-diagonal:checked ~ .end,
+    /* Handle team 2 victory:  */
+    /* Left column */
+.game .team-2.left:checked ~ .team-2.left:checked ~ .team-2.left:checked ~ .end,
+    /* Middle column */
+.game .team-2.middle:checked ~ .team-2.middle:checked ~ .team-2.middle:checked ~ .end,
+    /* Right column */
+.game .team-2.right:checked ~ .team-2.right:checked ~ .team-2.right:checked ~ .end,
+    /* Top row */
+.game .team-2.top:checked ~ .team-2.top:checked ~ .team-2.top:checked ~ .end,
+    /* Center row */
+.game .team-2.center:checked ~ .team-2.center:checked ~ .team-2.center:checked ~ .end,
+    /* Bottom row */
+.game .team-2.bottom:checked ~ .team-2.bottom:checked ~ .team-2.bottom:checked ~ .end,
+    /* Top Left to Bottom right */
+.game .team-2.first-diagonal:checked ~ .team-2.first-diagonal:checked ~ .team-2.first-diagonal:checked ~ .end,
+    /* Top Right to Bottom Left */
+.game .team-2.second-diagonal:checked ~ .team-2.second-diagonal:checked ~ .team-2.second-diagonal:checked ~ .end {
+    display: block;
+}
+
+/* Set label z index to display earlier turn boxes in the back: */
+.game input.turn-2 + label {
+    z-index: 2;
+}
+
+.game input.turn-3 + label {
+    z-index: 3;
+}
+
+.game input.turn-4 + label {
+    z-index: 4;
+}
+
+.game input.turn-5 + label {
+    z-index: 5;
+}
+
+.game input.turn-6 + label {
+    z-index: 6;
+}
+
+.game input.turn-7 + label {
+    z-index: 7;
+}
+
+.game input.turn-8 + label {
+    z-index: 8;
+}
+
+.game input.turn-9 + label {
+    z-index: 9;
+}
+
+.game input.turn-1 + label {
+    display: block; /* Show squares for first round: */
+    z-index: 1;
+}
+
+/* Once a square is clicked, bring to front and disable: */
+.game input:checked + label {
+    cursor: not-allowed;
+    z-index: 10 !important;
+}
+
+/* Once a square is clicked, show the shape: */
+.game input:checked + label:after {
+    opacity: 1;
+}
+
+/* Design for game squares (on basis of labels): */
+.game label {
+    background-color: #1F041B;
+    border-radius: 1px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    height: 140px;
+    margin: 10px;
+    position: absolute;
+    width: 140px;
+}
+
+/* Design for game squares, after will be used when clicked, to display shape: */
+.game label:after {
+    font-family: serif;
+    font-size: 70px;
+    left: 0;
+    margin-top: -35px;
+    opacity: 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    width: 100%;
+}

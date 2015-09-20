@@ -1,0 +1,179 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="tic-tac-toe.css" />
+    <title>Shani & Gal's Tic-Tac-Toe</title>
+</head>
+<body>
+<h1>Welcome to Tic-Tac-Toe Game</h1>
+
+<div class="game">
+    <input id="111" type="radio" class="team-1 left top first-diagonal turn-1"/>
+    <label for="111" class="turn-1"></label>
+    <input id="112" type="radio" class="team-1 middle top turn-1"/>
+    <label for="112" class="turn-1"></label>
+    <input id="113" type="radio" class="team-1 right top second-diagonal turn-1"/>
+    <label for="113" class="turn-1"></label>
+    <input id="121" type="radio" class="team-1 left center turn-1"/>
+    <label for="121" class="turn-1"></label>
+    <input id="122" type="radio" class="team-1 middle center first-diagonal second-diagonal turn-1"/>
+    <label for="122" class="turn-1"></label>
+    <input id="123" type="radio" class="team-1 right center turn-1"/>
+    <label for="123" class="turn-1"></label>
+    <input id="131" type="radio" class="team-1 left bottom second-diagonal turn-1"/>
+    <label for="131" class="turn-1"></label>
+    <input id="132" type="radio" class="team-1 middle bottom turn-1"/>
+    <label for="132" class="turn-1"></label>
+    <input id="133" type="radio" class="team-1 right bottom first-diagonal turn-1"/>
+    <label for="133" class="turn-1"></label>
+    <input id="211" type="radio" class="team-2 left top first-diagonal turn-2"/>
+    <label for="211" class="turn-2"></label>
+    <input id="212" type="radio" class="team-2 middle top turn-2"/>
+    <label for="212" class="turn-2"></label>
+    <input id="213" type="radio" class="team-2 right top second-diagonal turn-2"/>
+    <label for="213" class="turn-2"></label>
+    <input id="221" type="radio" class="team-2 left center turn-2"/>
+    <label for="221" class="turn-2"></label>
+    <input id="222" type="radio" class="team-2 middle center first-diagonal second-diagonal turn-2"/>
+    <label for="222" class="turn-2"></label>
+    <input id="223" type="radio" class="team-2 right center turn-2"/>
+    <label for="223" class="turn-2"></label>
+    <input id="231" type="radio" class="team-2 left bottom second-diagonal turn-2"/>
+    <label for="231" class="turn-2"></label>
+    <input id="232" type="radio" class="team-2 middle bottom turn-2"/>
+    <label for="232" class="turn-2"></label>
+    <input id="233" type="radio" class="team-2 right bottom first-diagonal turn-2"/>
+    <label for="233" class="turn-2"></label>
+    <input id="311" type="radio" class="team-1 left top first-diagonal turn-3"/>
+    <label for="311" class="turn-3"></label>
+    <input id="312" type="radio" class="team-1 middle top turn-3"/>
+    <label for="312" class="turn-3"></label>
+    <input id="313" type="radio" class="team-1 right top second-diagonal turn-3"/>
+    <label for="313" class="turn-3"></label>
+    <input id="321" type="radio" class="team-1 left center turn-3"/>
+    <label for="321" class="turn-3"></label>
+    <input id="322" type="radio" class="team-1 middle center first-diagonal second-diagonal turn-3"/>
+    <label for="322" class="turn-3"></label>
+    <input id="323" type="radio" class="team-1 right center turn-3"/>
+    <label for="323" class="turn-3"></label>
+    <input id="331" type="radio" class="team-1 left bottom second-diagonal turn-3"/>
+    <label for="331" class="turn-3"></label>
+    <input id="332" type="radio" class="team-1 middle bottom turn-3"/>
+    <label for="332" class="turn-3"></label>
+    <input id="333" type="radio" class="team-1 right bottom first-diagonal turn-3"/>
+    <label for="333" class="turn-3"></label>
+    <input id="411" type="radio" class="team-2 left top first-diagonal turn-4"/>
+    <label for="411" class="turn-4"></label>
+    <input id="412" type="radio" class="team-2 middle top turn-4"/>
+    <label for="412" class="turn-4"></label>
+    <input id="413" type="radio" class="team-2 right top second-diagonal turn-4"/>
+    <label for="413" class="turn-4"></label>
+    <input id="421" type="radio" class="team-2 left center turn-4"/>
+    <label for="421" class="turn-4"></label>
+    <input id="422" type="radio" class="team-2 middle center first-diagonal second-diagonal turn-4"/>
+    <label for="422" class="turn-4"></label>
+    <input id="423" type="radio" class="team-2 right center turn-4"/>
+    <label for="423" class="turn-4"></label>
+    <input id="431" type="radio" class="team-2 left bottom second-diagonal turn-4"/>
+    <label for="431" class="turn-4"></label>
+    <input id="432" type="radio" class="team-2 middle bottom turn-4"/>
+    <label for="432" class="turn-4"></label>
+    <input id="433" type="radio" class="team-2 right bottom first-diagonal turn-4"/>
+    <label for="433" class="turn-4"></label>
+    <input id="511" type="radio" class="team-1 left top first-diagonal turn-5"/>
+    <label for="511" class="turn-5"></label>
+    <input id="512" type="radio" class="team-1 middle top turn-5"/>
+    <label for="512" class="turn-5"></label>
+    <input id="513" type="radio" class="team-1 right top second-diagonal turn-5"/>
+    <label for="513" class="turn-5"></label>
+    <input id="521" type="radio" class="team-1 left center turn-5"/>
+    <label for="521" class="turn-5"></label>
+    <input id="522" type="radio" class="team-1 middle center first-diagonal second-diagonal turn-5"/>
+    <label for="522" class="turn-5"></label>
+    <input id="523" type="radio" class="team-1 right center turn-5"/>
+    <label for="523" class="turn-5"></label>
+    <input id="531" type="radio" class="team-1 left bottom second-diagonal turn-5"/>
+    <label for="531" class="turn-5"></label>
+    <input id="532" type="radio" class="team-1 middle bottom turn-5"/>
+    <label for="532" class="turn-5"></label>
+    <input id="533" type="radio" class="team-1 right bottom first-diagonal turn-5"/>
+    <label for="533" class="turn-5"></label>
+    <input id="611" type="radio" class="team-2 left top first-diagonal turn-6"/>
+    <label for="611" class="turn-6"></label>
+    <input id="612" type="radio" class="team-2 middle top turn-6"/>
+    <label for="612" class="turn-6"></label>
+    <input id="613" type="radio" class="team-2 right top second-diagonal turn-6"/>
+    <label for="613" class="turn-6"></label>
+    <input id="621" type="radio" class="team-2 left center turn-6"/>
+    <label for="621" class="turn-6"></label>
+    <input id="622" type="radio" class="team-2 middle center first-diagonal second-diagonal turn-6"/>
+    <label for="622" class="turn-6"></label>
+    <input id="623" type="radio" class="team-2 right center turn-6"/>
+    <label for="623" class="turn-6"></label>
+    <input id="631" type="radio" class="team-2 left bottom second-diagonal turn-6"/>
+    <label for="631" class="turn-6"></label>
+    <input id="632" type="radio" class="team-2 middle bottom turn-6"/>
+    <label for="632" class="turn-6"></label>
+    <input id="633" type="radio" class="team-2 right bottom first-diagonal turn-6"/>
+    <label for="633" class="turn-6"></label>
+    <input id="711" type="radio" class="team-1 left top first-diagonal turn-7"/>
+    <label for="711" class="turn-7"></label>
+    <input id="712" type="radio" class="team-1 middle top turn-7"/>
+    <label for="712" class="turn-7"></label>
+    <input id="713" type="radio" class="team-1 right top second-diagonal turn-7"/>
+    <label for="713" class="turn-7"></label>
+    <input id="721" type="radio" class="team-1 left center turn-7"/>
+    <label for="721" class="turn-7"></label>
+    <input id="722" type="radio" class="team-1 middle center first-diagonal second-diagonal turn-7"/>
+    <label for="722" class="turn-7"></label>
+    <input id="723" type="radio" class="team-1 right center turn-7"/>
+    <label for="723" class="turn-7"></label>
+    <input id="731" type="radio" class="team-1 left bottom second-diagonal turn-7"/>
+    <label for="731" class="turn-7"></label>
+    <input id="732" type="radio" class="team-1 middle bottom turn-7"/>
+    <label for="732" class="turn-7"></label>
+    <input id="733" type="radio" class="team-1 right bottom first-diagonal turn-7"/>
+    <label for="733" class="turn-7"></label>
+    <input id="811" type="radio" class="team-2 left top first-diagonal turn-8"/>
+    <label for="811" class="turn-8"></label>
+    <input id="812" type="radio" class="team-2 middle top turn-8"/>
+    <label for="812" class="turn-8"></label>
+    <input id="813" type="radio" class="team-2 right top second-diagonal turn-8"/>
+    <label for="813" class="turn-8"></label>
+    <input id="821" type="radio" class="team-2 left center turn-8"/>
+    <label for="821" class="turn-8"></label>
+    <input id="822" type="radio" class="team-2 middle center first-diagonal second-diagonal turn-8"/>
+    <label for="822" class="turn-8"></label>
+    <input id="823" type="radio" class="team-2 right center turn-8"/>
+    <label for="823" class="turn-8"></label>
+    <input id="831" type="radio" class="team-2 left bottom second-diagonal turn-8"/>
+    <label for="831" class="turn-8"></label>
+    <input id="832" type="radio" class="team-2 middle bottom turn-8"/>
+    <label for="832" class="turn-8"></label>
+    <input id="833" type="radio" class="team-2 right bottom first-diagonal turn-8"/>
+    <label for="833" class="turn-8"></label>
+    <input id="911" type="radio" class="team-1 left top first-diagonal turn-9"/>
+    <label for="911" class="turn-9"></label>
+    <input id="912" type="radio" class="team-1 middle top turn-9"/>
+    <label for="912" class="turn-9"></label>
+    <input id="913" type="radio" class="team-1 right top second-diagonal turn-9"/>
+    <label for="913" class="turn-9"></label>
+    <input id="921" type="radio" class="team-1 left center turn-9"/>
+    <label for="921" class="turn-9"></label>
+    <input id="922" type="radio" class="team-1 middle center first-diagonal second-diagonal turn-9"/>
+    <label for="922" class="turn-9"></label>
+    <input id="923" type="radio" class="team-1 right center turn-9"/>
+    <label for="923" class="turn-9"></label>
+    <input id="931" type="radio" class="team-1 left bottom second-diagonal turn-9"/>
+    <label for="931" class="turn-9"></label>
+    <input id="932" type="radio" class="team-1 middle bottom turn-9"/>
+    <label for="932" class="turn-9"></label>
+    <input id="933" type="radio" class="team-1 right bottom first-diagonal turn-9"/>
+    <label for="933" class="turn-9"></label>
+
+    <div class="end">
+        <h3> Team Wins!</h3>
+        <a href="">Go again (YEAH!)</a>
+    </div>
+</div>
+</body>
+</html>
